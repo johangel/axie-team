@@ -4,6 +4,15 @@
 
 export const environment = {
   production: false,
+  firebaseConfig: {
+    apiKey: 'AIzaSyBM43nUsln0xWanSK0sCk0p3bbWMmPNhS8',
+    authDomain: 'axie-team.firebaseapp.com',
+    projectId: 'axie-team',
+    storageBucket: 'axie-team.appspot.com',
+    messagingSenderId: '473335498921',
+    appId: '1:473335498921:web:0e1df299f1150342de01b8',
+    measurementId: 'G-9QNB68ZZTZ',
+  },
 };
 
 /*

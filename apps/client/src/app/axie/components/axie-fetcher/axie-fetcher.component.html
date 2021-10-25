@@ -1,0 +1,11 @@
+<div class="axie-fetcher">
+  <div class="axie-form">
+    <p>{{ position }}</p>
+    <input (change)="fetchAxieData(input.value)" #input />
+    <div *ngIf="errorMessage">{{ errorMessage }}</div>
+  </div>
+  <ng-container *ngIf="axie$ | async as axie">
+    <axie-component [axie]="axie"></axie-component>
+    <button (click)="clear()">delete</button>
+  </ng-container>
+</div>

@@ -1,0 +1,22 @@
+:host {
+  display: block;
+  .team-header {
+    display: flex;
+    justify-content: space-between;
+    h1 {
+      margin: 0;
+    }
+    mat-icon {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .axie-team {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .team-auction {
+    margin: 10px;
+  }
+}

@@ -1,0 +1,13 @@
+.axie {
+  padding: 10px;
+  .axie-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  img {
+    width: 200px;
+  }
+  p {
+    margin: 0;
+  }
+}

@@ -5,11 +5,13 @@
       "projectType": "application",
       "root": "apps/client",
       "sourceRoot": "apps/client/src",
-      "prefix": "chat",
+      "prefix": "",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/client",
             "index": "apps/client/src/index.html",
@@ -17,8 +19,14 @@
             "polyfills": "apps/client/src/polyfills.ts",
             "tsConfig": "apps/client/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["apps/client/src/favicon.ico", "apps/client/src/assets"],
-            "styles": ["apps/client/src/styles.scss"],
+            "assets": [
+              "apps/client/src/favicon.ico",
+              "apps/client/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "apps/client/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -83,10 +91,21 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/client"],
+          "outputs": [
+            "coverage/apps/client"
+          ],
           "options": {
             "jestConfig": "apps/client/jest.config.js",
             "passWithNoTests": true
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "browserTarget": "client:build:production",
+            "firebaseProject": "axie-team",
+            "firebaseHostingSite": "axie-team"
           }
         }
       }
@@ -111,9 +130,13 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/client-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/client-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -130,12 +153,17 @@
               "libs/models/tsconfig.lib.json",
               "libs/models/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/models/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/models/**/*"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/models"],
+          "outputs": [
+            "coverage/libs/models"
+          ],
           "options": {
             "jestConfig": "libs/models/jest.config.js",
             "passWithNoTests": true
@@ -150,12 +178,16 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/server",
             "main": "apps/server/src/main.ts",
             "tsConfig": "apps/server/tsconfig.app.json",
-            "assets": ["apps/server/src/assets"]
+            "assets": [
+              "apps/server/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -179,14 +211,20 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/server/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/server/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/server"],
+          "outputs": [
+            "coverage/apps/server"
+          ],
           "options": {
             "jestConfig": "apps/server/jest.config.js",
             "passWithNoTests": true

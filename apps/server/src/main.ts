@@ -1,4 +1,4 @@
-import { user } from '@nx-test/models';
+import { user } from '@chat/models';
 const user: user = {
   name: 'a',
   age: 22,

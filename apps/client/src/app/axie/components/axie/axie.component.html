@@ -1,0 +1,29 @@
+<div class="axie">
+  <p>ID: {{ axie.id }}</p>
+  <p>Name:{{ axie.name }}</p>
+  <ng-container *ngIf="axie.auction; else notOnSale">
+    <p>{{ axie.auction?.currentPriceUSD }} USD</p>
+    <p>{{ axie.auction?.currentPrice | ethereum }} Eth</p>
+  </ng-container>
+
+  <ng-template #notOnSale> Currently not on sale </ng-template>
+
+  <div class="axie-details">
+    <img [src]="axie.image" alt="" />
+    <div>
+      <ul>
+        <li>hp: {{ axie.stats?.hp }}</li>
+        <li>morale:{{ axie.stats?.morale }}</li>
+        <li>skill:{{ axie.stats?.skill }}</li>
+        <li>speed:{{ axie.stats?.speed }}</li>
+      </ul>
+    </div>
+    <div class="axie-parts">
+      <ul>
+        <li *ngFor="let parts of axie.parts">
+          {{ parts.id }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

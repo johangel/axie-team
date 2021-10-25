@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "axie-team": {
+      "hosting": {
+        "client": [
+          "axie-team"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "axie-team"
+  }
+}
